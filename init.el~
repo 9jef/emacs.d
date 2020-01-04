@@ -1,0 +1,40 @@
+;;;; ~/.emacs.d
+
+;;; my init.el
+
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+
+;; get use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; load use-package
+(setq use-package-always-ensure t)
+(require 'diminish)
+
+(eval-when-compile
+  (defvar use-package-verbose t)
+  (require 'use-package))
+
+;; ui
+(use-package moe-theme
+	     :disabled t
+	     :config
+	     (load-theme 'moe-light t))
+
+(use-package better-defaults
+	     :config
+	     (require 'better-defaults))
+
+;; modeline
+(defmacro diminish-major-mode (mode new-name)
+  `(add-hook (intern (concat (symbol-name ,mode) "-hook"))
+             '(lambda () (setq mode-name ,new-name))))
+
+(diminish-major-mode 'lisp-interaction-mode "λ»")
+(diminish-major-mode 'emacs-lisp-mode "Eλ")
+(diminish-major-mode 'lisp-mode "λ")

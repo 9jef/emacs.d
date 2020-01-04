@@ -63,6 +63,7 @@
 
 ;; better defaults
 (setq tab-width 4)
+(fset 'yes-or-no-p 'y-or-n-p)
 (use-package better-defaults
 	     :config
 	     (require 'better-defaults))

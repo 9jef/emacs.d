@@ -1,0 +1,55 @@
+
+;; ----- smex-history -----
+(
+ company-clang
+ company-mode
+ package-install
+ use-package-lint
+ beginning-of-line-text
+ load-theme
+ smart-mode-line-enable
+)
+
+;; ----- smex-data -----
+(
+ (comment-region . 2)
+ (load-file . 12)
+ (sml/apply-theme . 2)
+ (describe-current-coding-system . 1)
+ (kill-region . 3)
+ (describe-symbol . 2)
+ (describe-bindings . 1)
+ (indent-region . 2)
+ (smex . 1)
+ (package-install . 15)
+ (slime . 1)
+ (org-babel-load-file . 1)
+ (mkdir . 1)
+ (delete-char . 2)
+ (insert-parentheses . 1)
+ (paredit-mode . 2)
+ (goto-line . 4)
+ (whitespace-cleanup . 1)
+ (describe-variable . 1)
+ (load-library . 2)
+ (compile . 3)
+ (company-clang . 5)
+ (rename-uniquely . 1)
+ (eww . 1)
+ (eww-previous-url . 3)
+ (eww-up-url . 1)
+ (eww-forward-url . 1)
+ (eww-open-file . 1)
+ (load-theme . 10)
+ (disable-theme . 8)
+ (set-face-font . 3)
+ (font-lock-mode . 4)
+ (set-frame-font . 16)
+ (set-default-font . 2)
+ (package-refresh-contents . 1)
+ (copy-region-as-kill . 1)
+ (smart-mode-line-enable . 1)
+ (beginning-of-line-text . 1)
+ (use-package-lint . 2)
+ (company-mode . 2)
+)

@@ -1,0 +1,12 @@
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
+pacman -Rns gnome-common
+gobject-introspection
+pacman -Rns s(pacman -Qtdq)

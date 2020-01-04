@@ -1,0 +1,40 @@
+typeset -U PATH path
+path=("$path[@]" "$HOME/bin" "$HOME/.local/bin")
+export PATH
+
+#export EDITOR="emacs -nw"
+export EDITOR="emacs -nw"
+export SUDOEDITOR="emacs -nw --no-init-file --no-splash"
+export PAGER="less"
+
+export GOPATH=$HOME/go
+export PATH=$GOPATH:$GOPATH/bin:$PATH
+
+source ~/.ghcup/env
+
+alias e=$EDITOR
+alias vi=$EDITOR
+alias vim=$EDITOR
+
+alias p=$PAGER
+
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -la'
+
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+
+export LESS=-R
+man() {
+  LESS_TERMCAP_md=$'\e[01;31m' \
+  LESS_TERMCAP_me=$'\e[0m' \
+  LESS_TERMCAP_se=$'\e[0m' \
+  LESS_TERMCAP_so=$'\e[01;44;33m' \
+  LESS_TERMCAP_ue=$'\e[0m' \
+  LESS_TERMCAP_us=$'\e[01;32m' \
+  command man "$@"
+}
+
+eval "$(systemctl --user import-environment PATH)"
